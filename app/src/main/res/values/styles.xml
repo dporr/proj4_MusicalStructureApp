@@ -17,6 +17,13 @@
         <item name="android:gravity">center_horizontal</item>
     </style>
 
+    <style name="media_button">
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
     <style name="button_row">
         <item name="android:orientation">horizontal</item>
         <item name="android:layout_height">wrap_content</item>
