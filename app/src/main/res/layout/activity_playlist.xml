@@ -23,10 +23,30 @@
                 android:text="Displays a playlist whit songs"/>
         </LinearLayout>
         <ImageView
-            android:src="@drawable/car"
+            android:src="@drawable/disc"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:scaleType="centerCrop"/>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                style="@style/media_button"
+                android:src="@drawable/backward"/>
+            <ImageView
+                style="@style/media_button"
+                android:src="@drawable/play"/>
+            <ImageView
+                style="@style/media_button"
+                android:src="@drawable/forward"/>
+            <ImageView
+                android:layout_weight="0.4"
+                style="@style/media_button"
+                android:src="@drawable/menu"/>
+        </LinearLayout>
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
