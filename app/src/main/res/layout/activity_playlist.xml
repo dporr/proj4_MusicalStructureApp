@@ -1,57 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    android:id="@+id/parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingBottom="32dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:paddingTop="32dp">
+    android:paddingTop="8dp"
+    tools:context="dporras.nanodegree.quizapp.MainActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:descendantFocusability="beforeDescendants"
-        android:focusableInTouchMode="true"
-        android:orientation="vertical"
-        tools:context="dporras.nanodegree.quizapp.MainActivity">
-        <LinearLayout
-            style="@style/button_row">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Displays a playlist whit songs"/>
-        </LinearLayout>
-        <ImageView
-            android:src="@drawable/disc"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:scaleType="centerCrop"/>
-        <LinearLayout
-            android:layout_weight="1"
+    <LinearLayout
+        style="@style/button_row"
+        android:id="@+id/description_layout"
+        android:orientation="vertical">
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:text="@string/playlist_activity_description" />
             <ImageView
-                style="@style/media_button"
-                android:src="@drawable/backward"/>
-            <ImageView
-                style="@style/media_button"
-                android:src="@drawable/play"/>
-            <ImageView
-                style="@style/media_button"
-                android:src="@drawable/forward"/>
-            <ImageView
-                android:layout_weight="0.4"
-                style="@style/media_button"
-                android:src="@drawable/menu"/>
-        </LinearLayout>
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-        </ListView>
+                android:id="@+id/album_image_view"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerInside"
+                android:src="@drawable/disc" />
     </LinearLayout>
+    <!---MEDIA PLAYER CONTOLS-->
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/controls_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</ScrollView>
+        <LinearLayout style="@style/button_row">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:max="100"
+                android:progress="50" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/button_row">
+
+            <ImageView
+                android:id="@+id/backBImageView"
+                style="@style/media_button"
+                android:src="@drawable/backward" />
+
+            <ImageView
+                android:id="@+id/playImageView"
+                style="@style/media_button"
+                android:src="@drawable/play" />
+
+            <ImageView
+                android:id="@+id/nextImageView"
+                style="@style/media_button"
+                android:src="@drawable/forward" />
+        </LinearLayout>
+    </LinearLayout>
+    <!---MEDIA PLAYER CONTOLS-->
+        <ListView
+            android:layout_below="@id/description_layout"
+            android:layout_above="@id/controls_layout"
+            android:id="@+id/playlist_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ListView>
+</RelativeLayout>
