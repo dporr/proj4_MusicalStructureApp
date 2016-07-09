@@ -16,9 +16,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView  shuffledSongsImageView;
     public static final String CATEGORY="CATEGORY";
 
-
-    private String[] songs={"SONG_NAME,AUTHOR","SONG_NAME_0,AUTHOR_0","SONG_NAME_1,AUTHOR_1"};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
