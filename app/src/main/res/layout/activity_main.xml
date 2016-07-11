@@ -15,55 +15,71 @@
         android:focusableInTouchMode="true"
         android:orientation="vertical"
         tools:context="dporras.nanodegree.quizapp.MainActivity">
-        <LinearLayout
-            style="@style/button_row">
+
+        <LinearLayout style="@style/button_row">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/main_activity_description"/>
+                android:text="@string/main_activity_description" />
         </LinearLayout>
-        <LinearLayout
-            style="@style/button_row">
-            <ImageView
-                android:id="@+id/sports_button"
-                android:src="@drawable/sports"
-                style="@style/button_style"/>
-            <ImageView
-                android:id="@+id/favorites_button"
-                android:src="@drawable/like"
-                style="@style/button_style"/>
-        </LinearLayout>
-        <LinearLayout
-            style="@style/button_row">
-            <ImageView
-                android:id="@+id/sad_button"
-                android:src="@drawable/sad"
-                style="@style/button_style"/>
+
+        <LinearLayout style="@style/button_row">
 
             <ImageView
-                android:id="@+id/driving_button"
-                android:src="@drawable/car"
-                style="@style/button_style"/>
-        </LinearLayout>
-        <LinearLayout
-            style="@style/button_row">
-            <ImageView
-                android:id="@+id/karaoke_button"
-                android:src="@drawable/microphone"
-                style="@style/button_style"/>
+                android:id="@+id/sports_songs_image_view"
+                style="@style/button_style"
+                android:src="@drawable/sports" />
 
             <ImageView
-                android:id="@+id/meditation_button"
-                android:src="@drawable/meditation"
-                style="@style/button_style"/>
+                android:id="@+id/favorite_songs_image_view"
+                style="@style/button_style"
+                android:src="@drawable/like" />
         </LinearLayout>
-        <LinearLayout
-            style="@style/button_row">
+
+        <LinearLayout style="@style/button_row">
+
             <ImageView
-                android:id="@+id/random_button"
-                android:src="@drawable/arrows"
-                style="@style/button_style"/>
+                android:id="@+id/sad_songs_image_view"
+                style="@style/button_style"
+                android:src="@drawable/sad" />
+
+            <ImageView
+                android:id="@+id/road_songs_image_view"
+                style="@style/button_style"
+                android:src="@drawable/car" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/button_row">
+
+            <ImageView
+                android:id="@+id/karaoke_songs_image_view"
+                style="@style/button_style"
+                android:src="@drawable/microphone" />
+
+            <ImageView
+                android:id="@+id/meditation_songs_image_view"
+                style="@style/button_style"
+                android:src="@drawable/meditation" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/button_row">
+
+            <ImageView
+                android:id="@+id/shuffled_songs_image_view"
+                style="@style/button_style"
+                android:src="@drawable/arrows" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/button_row">
+
+            <ImageView
+                android:id="@+id/settings_image_view"
+                style="@style/button_style"
+                android:layout_height="50dp"
+                android:src="@drawable/settings" />
         </LinearLayout>
     </LinearLayout>
+
 
 </ScrollView>

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Music app</string>
+    <string name="main_activity_description">ACTIVITY DESCRIPTION:In this screen the user chooses and activity or mood, each image button launches an activity including a playlist whit the songs tagged whit that mood or activity.
+    IE. If user clics on sports/biking there will be a playlist whit all the "power songs" that stimulates he or she to do exercise</string>
+    <string name="playlist_activity_description">Displays a custom playlist including all songs tagged in this category.Has common media player control.There\'s a list view whit the songs allowing the user to tag a particular song in more than 1 mod/activity</string>
+    <string name="some_option">Some Option</string>
+    <string name="another_option">another Option</string>
+    <string name="registered_key_hint_text">Registered key or mail</string>
+    <string name="rate_this_app">Rate this app</string>
+    <string name="settings_activity_description">This activity is intended for setting up basic user preferences.Not iplemented yet</string>
 </resources>
