@@ -3,6 +3,7 @@ package dporras.nanodegree.musicapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -14,6 +15,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView  karaokeSongsImageView;
     private ImageView  meditationSongsImageView;
     private ImageView  shuffledSongsImageView;
+    private ImageView settingsImageView;
+
     public static final String CATEGORY="CATEGORY";
 
     @Override
@@ -51,6 +54,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Retrieve shuffled songs image view and bids this class as click Listener
         shuffledSongsImageView = (ImageView) findViewById(R.id.shuffled_songs_image_view);
         shuffledSongsImageView.setOnClickListener(this);
+
+        settingsImageView = (ImageView) findViewById(R.id.settings_image_view);
+        settingsImageView .setOnClickListener(this);
     }
 
     @Override
@@ -58,9 +64,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Prepares an intent for launching an activity that shows
         // the selected cathegory playlists or the settings for the app
         Intent intent = new Intent(this, PlaylistActivity.class);
-
-        if (R.id.settings_image_view==view.getId())
+        Log.i("INFO","View ID;"+view.getId());
+        if (R.id.settings_image_view==view.getId()){
              intent = new Intent(this,SettingsActivity.class);
+            Log.i("INFO","MATCHED");
+        }
 
         //default category is all songs shuffled
         int category=SongTag.SHUFFLED_SONG;
