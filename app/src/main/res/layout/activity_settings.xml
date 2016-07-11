@@ -3,39 +3,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:orientation="vertical"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="dporras.nanodegree.musicapp.SettingsActivity">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="This activity is intended for setting up basic user preferences.Not iplemented yet"
-        />
+        android:text="@string/settings_activity_description"
+        android:textSize="14sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Some Option"/>
+            android:text="@string/some_option" />
+
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="another Option"/>
+            android:text="@string/another_option" />
+
         <EditText
             android:layout_width="match_parent"
-            android:layout_margin="12dp"
             android:layout_height="wrap_content"
-            android:hint="Registered key or mail"/>
+            android:layout_margin="12dp"
+            android:hint="@string/registered_key_hint_text" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rate this app"/>
+            android:text="@string/rate_this_app" />
     </LinearLayout>
 
 </LinearLayout>

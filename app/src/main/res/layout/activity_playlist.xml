@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -13,27 +12,29 @@
     tools:context="dporras.nanodegree.quizapp.MainActivity">
 
     <LinearLayout
-        style="@style/button_row"
         android:id="@+id/description_layout"
+        style="@style/button_row"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/playlist_activity_description" />
-            <ImageView
-                android:id="@+id/album_image_view"
-                android:layout_width="300dp"
-                android:layout_height="250dp"
-                android:layout_gravity="center_horizontal"
-                android:scaleType="centerInside"
-                android:src="@drawable/disc" />
+
+        <ImageView
+            android:id="@+id/album_image_view"
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerInside"
+            android:src="@drawable/disc" />
     </LinearLayout>
     <!---MEDIA PLAYER CONTOLS-->
     <LinearLayout
-        android:layout_alignParentBottom="true"
         android:id="@+id/controls_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:orientation="vertical">
 
         <LinearLayout style="@style/button_row">
@@ -65,11 +66,10 @@
         </LinearLayout>
     </LinearLayout>
     <!---MEDIA PLAYER CONTOLS-->
-        <ListView
-            android:layout_below="@id/description_layout"
-            android:layout_above="@id/controls_layout"
-            android:id="@+id/playlist_list_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </ListView>
+    <ListView
+        android:id="@+id/playlist_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/controls_layout"
+        android:layout_below="@id/description_layout"></ListView>
 </RelativeLayout>

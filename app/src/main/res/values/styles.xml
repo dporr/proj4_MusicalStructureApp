@@ -24,6 +24,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">50dp</item>
     </style>
+
     <style name="button_row">
         <item name="android:orientation">horizontal</item>
         <item name="android:layout_height">wrap_content</item>

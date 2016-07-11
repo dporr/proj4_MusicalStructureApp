@@ -7,17 +7,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView sportsSongsImageView;
     private ImageView favoriteSongsImageView;
     private ImageView sadSongsImageView;
     private ImageView roadSongsImageView;
-    private ImageView  karaokeSongsImageView;
-    private ImageView  meditationSongsImageView;
-    private ImageView  shuffledSongsImageView;
+    private ImageView karaokeSongsImageView;
+    private ImageView meditationSongsImageView;
+    private ImageView shuffledSongsImageView;
     private ImageView settingsImageView;
 
-    public static final String CATEGORY="CATEGORY";
+    public static final String CATEGORY = "CATEGORY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initComponents();
     }
 
-    private void initComponents(){
+    private void initComponents() {
         //Retrieve sports image view and bids this class as click Listener
         sportsSongsImageView = (ImageView) findViewById(R.id.sports_songs_image_view);
         sportsSongsImageView.setOnClickListener(this);
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         shuffledSongsImageView.setOnClickListener(this);
 
         settingsImageView = (ImageView) findViewById(R.id.settings_image_view);
-        settingsImageView .setOnClickListener(this);
+        settingsImageView.setOnClickListener(this);
     }
 
     @Override
@@ -64,30 +64,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Prepares an intent for launching an activity that shows
         // the selected cathegory playlists or the settings for the app
         Intent intent = new Intent(this, PlaylistActivity.class);
-        Log.i("INFO","View ID;"+view.getId());
-        if (R.id.settings_image_view==view.getId()){
-             intent = new Intent(this,SettingsActivity.class);
-            Log.i("INFO","MATCHED");
-        }
+        if (R.id.settings_image_view == view.getId())
+            intent = new Intent(this, SettingsActivity.class);
 
         //default category is all songs shuffled
-        int category=SongTag.SHUFFLED_SONG;
+        int category = SongTag.SHUFFLED_SONG;
         //Identifies which category was clicked and adds it as parameter to an intent
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.sports_songs_image_view:
-                category=SongTag.SPORTS_SONG;
+                category = SongTag.SPORTS_SONG;
                 break;
             case R.id.favorite_songs_image_view:
-                category=SongTag.FAVORITE_SONG;
+                category = SongTag.FAVORITE_SONG;
                 break;
             case R.id.sad_songs_image_view:
-                category=SongTag.SAD_SONG;
+                category = SongTag.SAD_SONG;
                 break;
             case R.id.road_songs_image_view:
-                category=SongTag.ROAD_SONG;
+                category = SongTag.ROAD_SONG;
                 break;
             case R.id.karaoke_songs_image_view:
-                category=SongTag.KARAOKE_SONG;
+                category = SongTag.KARAOKE_SONG;
                 break;
             case R.id.meditation_songs_image_view:
                 category = SongTag.MEDITATION_SONG;
@@ -96,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 System.out.print("NOTHING");
         }
         //Adds the corresponding category before launch the Activity
-        intent.putExtra(MainActivity.CATEGORY,category);
+        intent.putExtra(MainActivity.CATEGORY, category);
         startActivity(intent);
     }
 }
