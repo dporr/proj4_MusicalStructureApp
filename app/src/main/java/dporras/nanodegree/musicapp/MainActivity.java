@@ -55,8 +55,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        //Prepares an intent for launching an activity that shows the selected cathegory playlists
-        Intent intent = new Intent(this,PlaylistActivity.class);
+        //Prepares an intent for launching an activity that shows
+        // the selected cathegory playlists or the settings for the app
+        Intent intent = new Intent(this, PlaylistActivity.class);
+
+        if (R.id.settings_image_view==view.getId())
+             intent = new Intent(this,SettingsActivity.class);
+
         //default category is all songs shuffled
         int category=SongTag.SHUFFLED_SONG;
         //Identifies which category was clicked and adds it as parameter to an intent
@@ -79,8 +84,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.meditation_songs_image_view:
                 category = SongTag.MEDITATION_SONG;
                 break;
-                default:
-                    System.out.print("NOTHING");
+            default:
+                System.out.print("NOTHING");
         }
         //Adds the corresponding category before launch the Activity
         intent.putExtra(MainActivity.CATEGORY,category);
