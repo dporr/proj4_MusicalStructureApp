@@ -63,7 +63,19 @@
                 android:id="@+id/shuffled_songs_image_view"
                 android:src="@drawable/arrows"
                 style="@style/button_style"/>
+
         </LinearLayout>
+        <LinearLayout
+            style="@style/button_row">
+        <ImageView
+            android:id="@+id/settings_image_view"
+            android:src="@drawable/settings"
+            android:layout_height="50dp"
+            style="@style/button_style"/>
     </LinearLayout>
+
+
+    </LinearLayout>
+
 
 </ScrollView>
